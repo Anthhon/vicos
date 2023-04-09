@@ -26,7 +26,7 @@ The following formats are supported as input formats:
 -   .avi
 -   .amv
 
-The output format is always .mp4. And can be changed in the line 4 of the code:
+The output format is always `.mp4` and can be changed in the line 4 of the code:
 ```bash
   4 output_format=.mp4
 ```
