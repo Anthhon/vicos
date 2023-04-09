@@ -7,7 +7,7 @@ verbose_flag=0
 # Check if input file has been provided as an argument
 if [ -z "$1" ]; then
 	echo "ERROR: Input file not provided"
-	return 1
+	exit 1
 fi
 echo "File name: $1"
 
@@ -17,11 +17,11 @@ input_format=${input_file##*.}
 echo "File format: $input_format"
 
 if ! [[ "${source_format[@]}" =~ "${input_format}" ]]; then
-    echo "ERROR: Input file format must be a video format ${source_formats[@]}"
-    return 1
+	echo "ERROR: Input file format must be a video format ${source_formats[@]}"
+	exit 1
 elif [ ! -f "$input_file" ]; then
 	echo "ERROR: Input file doesn't exist"
-	return 1
+	exit 1
 fi
 echo "File found!"
 
